@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ayx · 用途速览 | page-portal-ayx.com</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
+      background-color: #f4f7fa;
+      color: #1e2b3c;
+      line-height: 1.6;
+      scroll-behavior: smooth;
+    }
+
+    .hero {
+      background: linear-gradient(145deg, #0b1a2a 0%, #182d44 100%);
+      color: #eef3f9;
+      padding: 3.5rem 1.5rem 2.8rem;
+      text-align: center;
+      border-bottom-left-radius: 32px;
+      border-bottom-right-radius: 32px;
+      box-shadow: 0 6px 18px rgba(0,0,0,0.12);
+    }
+
+    .hero h1 {
+      font-size: 2.6rem;
+      font-weight: 500;
+      letter-spacing: 1px;
+      margin-bottom: 0.4rem;
+    }
+
+    .hero .sub {
+      font-size: 1.1rem;
+      opacity: 0.8;
+      max-width: 640px;
+      margin: 0.2rem auto 0.8rem;
+    }
+
+    .hero .badge {
+      display: inline-block;
+      background: #3f6b95;
+      color: #f0f6ff;
+      font-size: 0.8rem;
+      padding: 0.2rem 1rem;
+      border-radius: 18px;
+      letter-spacing: 0.5px;
+      margin-top: 0.2rem;
+    }
+
+    .wrapper {
+      max-width: 1000px;
+      margin: 2.5rem auto 3rem;
+      padding: 0 1.2rem;
+    }
+
+    .card-group {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1.5rem;
+      margin-bottom: 2.2rem;
+    }
+
+    .card {
+      background: #ffffff;
+      border-radius: 20px;
+      padding: 1.8rem 1.6rem;
+      flex: 1 1 260px;
+      box-shadow: 0 4px 12px rgba(0, 20, 40, 0.06);
+      transition: transform 0.15s ease, box-shadow 0.2s;
+      border: 1px solid #e6edf5;
+    }
+
+    .card:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 20px rgba(31, 54, 84, 0.08);
+    }
+
+    .card h3 {
+      font-size: 1.25rem;
+      font-weight: 600;
+      color: #143652;
+      margin-bottom: 0.7rem;
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+    }
+
+    .card p {
+      color: #2c4057;
+      font-size: 0.96rem;
+    }
+
+    .highlight-link {
+      color: #1d6d9e;
+      text-decoration: none;
+      font-weight: 500;
+      border-bottom: 1px solid transparent;
+      transition: border-color 0.15s;
+    }
+
+    .highlight-link:hover {
+      border-bottom-color: #1d6d9e;
+    }
+
+    .section-title {
+      font-size: 1.5rem;
+      font-weight: 500;
+      color: #0b1f31;
+      margin: 2.2rem 0 1.2rem;
+      border-left: 5px solid #2e6b96;
+      padding-left: 1rem;
+    }
+
+    .feature-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 1.2rem;
+      margin-top: 0.4rem;
+    }
+
+    .feature-item {
+      background: #ffffff;
+      border-radius: 16px;
+      padding: 1rem 1.2rem;
+      border: 1px solid #dce7f2;
+      transition: background 0.1s;
+    }
+
+    .feature-item strong {
+      display: block;
+      font-size: 1.1rem;
+      font-weight: 600;
+      color: #18405c;
+      margin-bottom: 0.2rem;
+    }
+
+    .feature-item span {
+      font-size: 0.92rem;
+      color: #365875;
+    }
+
+    .scenario-list {
+      background: #ffffff;
+      border-radius: 24px;
+      padding: 1.6rem 1.8rem;
+      margin: 1.8rem 0;
+      border: 1px solid #dfeaf3;
+      list-style: none;
+    }
+
+    .scenario-list li {
+      padding: 0.5rem 0;
+      border-bottom: 1px solid #eaf1f9;
+      display: flex;
+      gap: 0.6rem;
+      align-items: baseline;
+    }
+
+    .scenario-list li:last-child {
+      border-bottom: none;
+    }
+
+    .scenario-list .tag {
+      background: #dbe9f5;
+      color: #134261;
+      font-size: 0.78rem;
+      font-weight: 600;
+      padding: 0.1rem 0.7rem;
+      border-radius: 12px;
+      white-space: nowrap;
+    }
+
+    .tip-box {
+      background: #eaf3fd;
+      border-radius: 24px;
+      padding: 1.6rem 1.8rem;
+      margin: 2rem 0 0.8rem;
+      border-left: 6px solid #316f9b;
+    }
+
+    .tip-box p {
+      color: #1a3650;
+    }
+
+    .faq-mini {
+      margin: 2.5rem 0 1rem;
+    }
+
+    .faq-mini details {
+      background: #ffffff;
+      border-radius: 16px;
+      padding: 0.8rem 1.4rem;
+      margin-bottom: 0.7rem;
+      border: 1px solid #dfeaf3;
+    }
+
+    .faq-mini details summary {
+      font-weight: 600;
+      color: #18496d;
+      cursor: pointer;
+      padding: 0.2rem 0;
+    }
+
+    .faq-mini details p {
+      padding: 0.6rem 0 0.2rem;
+      color: #2b4b6b;
+      font-size: 0.95rem;
+    }
+
+    .footnote {
+      margin-top: 3rem;
+      padding: 1.2rem 0;
+      border-top: 1px solid #d4e2ef;
+      font-size: 0.88rem;
+      color: #55718b;
+      text-align: center;
+    }
+
+    hr {
+      border: none;
+      border-top: 1px solid #d6e3f0;
+      margin: 1.8rem 0;
+    }
+
+    @media (max-width: 600px) {
+      .hero h1 { font-size: 2.1rem; }
+      .hero { padding: 2.5rem 1rem 2rem; }
+      .card-group { gap: 1rem; }
+      .card { padding: 1.4rem; }
+      .section-title { font-size: 1.3rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <section class="hero">
+    <h1>ayx · 站点说明</h1>
+    <div class="sub">快速识别用途 · 平实介绍 · 不过度包装</div>
+    <div class="badge">page-portal-ayx.com</div>
+  </section>
+
+  <div class="wrapper">
+
+    <!-- 摘要卡片区 -->
+    <div class="card-group">
+      <div class="card">
+        <h3>📋 摘要</h3>
+        <p>一个指向特定资源的页面门户，帮助访问者直接定位到与 <strong>ayx</strong> 相关的内容或工具。不预设流量标签，只提供清晰的路标。</p>
+      </div>
+      <div class="card">
+        <h3>💡 亮点</h3>
+        <p>页面结构克制，无多余跳转。核心锚点明确，承载指向性功能。适合需要快速确认入口的用户。</p>
+      </div>
+      <div class="card">
+        <h3>🧭 使用建议</h3>
+        <p>如果你正寻找与 <a href="https://page-portal-ayx.com" class="highlight-link">ayx</a> 相关的资源或服务，这里就是直接的目的地。访问前建议确认网络环境与权限。</p>
+      </div>
+    </div>
+
+    <!-- 特点网格 -->
+    <h2 class="section-title">站点特点</h2>
+    <div class="feature-grid">
+      <div class="feature-item">
+        <strong>专注指向</strong>
+        <span>不聚合无关信息，页面即路径。</span>
+      </div>
+      <div class="feature-item">
+        <strong>低认知负荷</strong>
+        <span>结构扁平，无需多层查找。</span>
+      </div>
+      <div class="feature-item">
+        <strong>无诱导文案</strong>
+        <span>不制造紧迫感，不夸大功能。</span>
+      </div>
+      <div class="feature-item">
+        <strong>稳定入口</strong>
+        <span>固定 URL，可收藏或引用。</span>
+      </div>
+    </div>
+
+    <!-- 场景 / 适用情况 -->
+    <h2 class="section-title">适合这些场景</h2>
+    <ul class="scenario-list">
+      <li><span class="tag">快速跳转</span> 需要直达 ayx 相关资源，不想经过中间页。</li>
+      <li><span class="tag">技术参考</span> 用于文档、配置或演示中作为固定指向链接。</li>
+      <li><span class="tag">信息核对</span> 确认某个资源是否仍指向当前地址。</li>
+      <li><span class="tag">简单分享</span> 直接提供链接，附带最少解释。</li>
+    </ul>
+
+    <!-- 克制的访问说明 -->
+    <div class="tip-box">
+      <p><strong>可信但克制的访问说明</strong><br>
+      本页为 <a href="https://page-portal-ayx.com" class="highlight-link">ayx</a> 的概要介绍与导航，页面本身不收集数据、不加载外部脚本、不设置 cookies。访问后所抵达的目标内容由域名所有者管理，建议你根据自身判断进行使用。若链接失效或内容变更，请以实际页面为准。</p>
+    </div>
+
+    <!-- FAQ 摘要 -->
+    <div class="faq-mini">
+      <h2 class="section-title">常见疑问摘要</h2>
+      <details>
+        <summary>这个页面是做什么的？</summary>
+        <p>这是一个精简的介绍页，用于说明 page-portal-ayx.com 所指向的资源背景，帮助访问者快速判断是否符合需求。</p>
+      </details>
+      <details>
+        <summary>我需要注册或登录才能访问 <a href="https://page-portal-ayx.com" class="highlight-link">ayx</a> 吗？</summary>
+        <p>本页不涉及任何账户流程。后续访问目标页面是否要求凭证，取决于目标服务的具体规则，此处不作假设。</p>
+      </details>
+      <details>
+        <summary>链接点开后内容不符合预期怎么办？</summary>
+        <p>域名可能更新或迁移。建议核对 URL 拼写，或通过其他可靠渠道确认最新入口。</p>
+      </details>
+    </div>
+
+    <hr>
+
+    <div style="text-align: center; font-size: 0.95rem; color: #2b4c6b;">
+      <p>核心功能聚焦于“指向”——如需访问，可直接前往 <a href="https://page-portal-ayx.com" class="highlight-link">ayx</a>。</p>
+    </div>
+
+    <div class="footnote">
+      page-portal-ayx.com · 产品说明式介绍页 · 页面内容仅供参考
+    </div>
+
+  </div>
+
+</body>
+</html>
